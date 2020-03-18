@@ -1,12 +1,16 @@
 body {
-  text-align: center;
+  /* text-align: center; */
   background-color: cornsilk;
   color : black;
 }
 
 
-
-/* .App-header {
+.AppHeader {
+  text-align: center;
+  background-color: cornsilk;
+  color : black;
+}
+/* .AppHeader {
   background-color: cornsilk;
   min-height: 100vh;
   display: flex;
@@ -14,7 +18,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: blueviolet;
+  color: black;
 } */
 
 .App-link {

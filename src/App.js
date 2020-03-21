@@ -6,13 +6,13 @@ import DisplayStatus from './Component/DisplayStatus.js';
 
 class App extends React.Component {
   state = {
-    storeList: [{ store: "Tesco", status: "S" },
-    { store: "Sainsbury", status: "L" },
-    { store: "Aldi", status: "S" },
-    { store: "Quality Save", status: "N" },
-    { store: "Wilko", status: "N" },
-    { store: "B and M", status: "S" },
-    { store: "SuperDrug", status: "L" }]
+    storeList: [{ store: "Tesco", status: "S", date:"01 Jan" },
+    { store: "Sainsbury", status: "L", date:"02 Jan" },
+    { store: "Aldi", status: "S", date: "03 Jan" },
+    { store: "Quality Save", status: "N", date:"04 Jan" },
+    { store: "Wilko", status: "N", date:"05 Jan" },
+    { store: "B and M", status: "S", date: "06 Jan" },
+    { store: "SuperDrug", status: "L", date: "07 Jan" }]
   }
 
   getStatus = (item) => {
@@ -28,11 +28,10 @@ class App extends React.Component {
     //   .catch(function (error) {
     //     console.log(error);
     //   })
-
-
-
   }
-
+   editItems = (sotre) => {
+    
+  }
 
   render() {
 
@@ -65,10 +64,18 @@ class App extends React.Component {
                       return <DisplayStatus
                         store={item.store}
                         status={item.status}
+                        date={item.date}
                         key={item.store}
                       />
                     })}
                   </ol>
+                </div>
+              </div>
+              <br/>
+              <div className="row ">
+                <div className="col-12 col-lg-12 ">
+                     <i className="fa fa-edit fa-4x" 
+                      onClick={this.editItems}/> 
                 </div>
               </div>
             </div>

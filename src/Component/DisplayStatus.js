@@ -25,9 +25,7 @@ class DisplayStatus extends React.Component {
 
         return true;
     }
-    handleEdit = () => {
-console.log("IN EDIT");
-    }
+
 
     closeModal() {
         this.props.resetVariablesFunc();
@@ -81,12 +79,11 @@ console.log("IN EDIT");
                     }
                     </div>
 
-                    <div className="col-1 col-lg-1">
-                        {/* <i className="fas fa-edit"></i> */}
-                        <i className="fa fa-edit fa-1x" 
-              onClick={this.handleEdit}/> 
+                    <div className="col-2 col-lg-2">
+
+                    <p> Updated {this.props.date}</p>
                    </div>
-                   <div className="col-3 col-lg-3">
+                   <div className="col-2 col-lg-2">
                    </div>
                 
            </div> 

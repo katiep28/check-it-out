@@ -6,12 +6,12 @@ import DisplayStatus from './Component/DisplayStatus.js';
 
 class App extends React.Component {
   state = {
-    storeList: [{ store: "Tesco", status: "H" },
+    storeList: [{ store: "Tesco", status: "S" },
     { store: "Sainsbury", status: "L" },
-    { store: "Aldi", status: "M" },
-    { store: "Quality Save", status: "H" },
-    { store: "Wilo", status: "H" },
-    { store: "B and M", status: "L" },
+    { store: "Aldi", status: "S" },
+    { store: "Quality Save", status: "N" },
+    { store: "Wilko", status: "N" },
+    { store: "B and M", status: "S" },
     { store: "SuperDrug", status: "L" }]
   }
 
@@ -54,11 +54,13 @@ class App extends React.Component {
                 key="1"
                 getStatusFunc={this.getStatus}
               />
+              <br/>
+              <br/>
 
-              <div className="row">
-                <div className="col-12 col-lg-12">
+              <div className="row ">
+                <div className="col-12 col-lg-12 ">
 
-                  <ol className="list-group">
+                  <ol className="list-group ">
                     {this.state.storeList.map(item => {
                       return <DisplayStatus
                         store={item.store}

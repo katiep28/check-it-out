@@ -6,6 +6,7 @@ import DisplayStatus from './Component/DisplayStatus.js';
 
 class App extends React.Component {
   state = {
+    disableButton: true,
     storeList: [{ store: "Tesco", status: "S", date:"01 Jan" },
     { store: "Sainsbury", status: "L", date:"02 Jan" },
     { store: "Aldi", status: "S", date: "03 Jan" },
@@ -29,14 +30,33 @@ class App extends React.Component {
     //     console.log(error);
     //   })
   }
-   editItems = (sotre) => {
-    
+
+  updateStatus = (item) => {
+    // axios.get('https://ijrb29r28l.execute-api.eu-west-2.amazonaws.com/dev/getcocktaildrink/' + drink1 + "/" + drink2 + "/" + drink3)
+    //   .then((response) => {
+
+    //     console.log(response.data.cocktails);
+
+    //     this.setState({
+    //       cocktailByDrink: response.data.cocktails
+    //     })
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   })
+  }
+   editItems = () => {
+    this.setState({
+            disableButton: false
+          })
+   
   }
 
   render() {
 
 
     const itemList = [{ name: "Toilet Roll" }, { name: "Hand Sanitiser" }];
+    let edit = false;
 
     return (
 
@@ -65,6 +85,8 @@ class App extends React.Component {
                         store={item.store}
                         status={item.status}
                         date={item.date}
+                        disableButton={this.state.disableButton}
+                        updateStatusFunc = {this.updateStatus}
                         key={item.store}
                       />
                     })}
@@ -75,7 +97,8 @@ class App extends React.Component {
               <div className="row ">
                 <div className="col-12 col-lg-12 ">
                      <i className="fa fa-edit fa-4x" 
-                      onClick={this.editItems}/> 
+                         onClick={this.editItems}/> 
+                  
                 </div>
               </div>
             </div>

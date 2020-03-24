@@ -12,7 +12,7 @@ class App extends React.Component {
     { store: "Aldi", status: "S", date: "03 Jan" },
     { store: "Quality Save", status: "N", date:"04 Jan" },
     { store: "Wilko", status: "N", date:"05 Jan" },
-    { store: "B and M", status: "S", date: "06 Jan" },
+    { store: "B and M", status: "", date: "06 Jan" },
     { store: "SuperDrug", status: "L", date: "07 Jan" }]
   }
 
@@ -31,7 +31,7 @@ class App extends React.Component {
     //   })
   }
 
-  updateStatus = (item) => {
+  updateStatus = (store,status) => {
     // axios.get('https://ijrb29r28l.execute-api.eu-west-2.amazonaws.com/dev/getcocktaildrink/' + drink1 + "/" + drink2 + "/" + drink3)
     //   .then((response) => {
 
@@ -44,6 +44,10 @@ class App extends React.Component {
     //   .catch(function (error) {
     //     console.log(error);
     //   })
+// console.log("STATUS " + status);
+    this.setState({
+      disableButton: true
+    })
   }
    editItems = () => {
     this.setState({
@@ -53,18 +57,15 @@ class App extends React.Component {
   }
 
   render() {
-
-
     const itemList = [{ name: "Toilet Roll" }, { name: "Hand Sanitiser" }];
-    let edit = false;
 
     return (
 
       <body>
         <div className="AppHeader">
           <h1>Check it Out </h1>
-
-          <h3>blahhh balhhh blahhh</h3>
+          <h3>Easliy locate where to find essential items in M33</h3>
+          <h3>If you have seen stock in store click the edit button at the bottom and update the infromation</h3>
           <div>
             <div className="Container">
               <DropDown
@@ -96,9 +97,10 @@ class App extends React.Component {
               <br/>
               <div className="row ">
                 <div className="col-12 col-lg-12 ">
+                  <button>
                      <i className="fa fa-edit fa-4x" 
                          onClick={this.editItems}/> 
-                  
+                  </button>
                 </div>
               </div>
             </div>

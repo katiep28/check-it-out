@@ -7,6 +7,7 @@ class DropDown extends React.Component {
 
         super();
         this.state = {
+            postCode : "M33"
             
         };
 
@@ -25,7 +26,7 @@ class DropDown extends React.Component {
     handleDropdownChange(e) {
 
         this.setState({ selecteditem: e.target.value });
-        this.props.getStatusFunc(e.target.value, "");
+        this.props.getStatusFunc(e.target.value, this.state.postCode);
     }
 
     hideDropdownMenu() {
@@ -42,14 +43,12 @@ class DropDown extends React.Component {
             <div>
                 <div className="button"
                     onClick={this.showDropdownMenu} >
-                    {this.props.label}
+                    {/* {this.props.label} */}
                 </div>
                 <select name={this.props.label} id="dropdown" onChange={this.handleDropdownChange}>
-                    <option>
-                        CHOOSE AN ITEM
-                            </option>
+                    <option> CHOOSE AN ITEM </option>
                     {this.props.itemList.map(item => {
-                        return <option value={item.name}> {item.name} </option>
+                        return <option value={item.name} id={item.id}> {item.name} </option>
                     })}
                 </select>
             </div>
@@ -57,8 +56,5 @@ class DropDown extends React.Component {
         );
     }
 }
-
-
-
 
 export default DropDown;

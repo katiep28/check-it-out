@@ -43,13 +43,16 @@ console.log("Hello " + status);
 
     render() {
         return (  
+    
                 <div className="row ">
-                    <div className="col-0 col-lg-3">
+                    <div className="col-0 col-lg-2">
                         
                     </div>
-                    <div className="col-12 col-lg-1">
-                        <p> {this.props.store}  </p>
+                    
+                    <div className="col-12 col-lg-2">
+                        <h5 align="left"> {this.props.store}  </h5>
                     </div>
+                    
                     <div className="col-4 col-lg-1">
                         {this.disableButton("None") 
                             ?
@@ -88,9 +91,9 @@ console.log("Hello " + status);
                         }
                     </div>
                     <div className="col-12 col-lg-2">
-                        <p> Updated {this.props.date}</p>
+                        <h5 align="lefy"> Upd {this.props.date}</h5>
                    </div>
-                   <div className="col-0 col-lg-2">
+                   <div className="col-0 col-lg-1">
                    </div>
            </div> 
         );

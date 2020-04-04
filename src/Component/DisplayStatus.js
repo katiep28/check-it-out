@@ -11,10 +11,8 @@ class DisplayStatus extends React.Component {
 
     handleClick = (status) => {
 //call an update function to update the details
-
-console.log("Hello " + status);
-
-        this.props.updateStatusFunc(this.props.store, status);
+        this.props.updateStatusFunc(this.props.storeId, status);
+        
     }
 
     disableButton = (type) => {
@@ -37,14 +35,14 @@ console.log("Hello " + status);
     }
 
 
-    closeModal() {
-        this.props.resetVariablesFunc();
-    }
+    // closeModal() {
+    //     this.props.resetVariablesFunc();
+    // }
 
     render() {
         return (  
     
-                <div className="row ">
+                <div className="row">
                     <div className="col-0 col-lg-2">
                         
                     </div>

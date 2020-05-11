@@ -120,11 +120,14 @@ class App extends React.Component {
     return (
 
       <div className="AppHeader">
-        <h1>Ch3K it Out </h1>
-        <h5>Easliy locate where to find essential items in M33</h5>
-        <h5>If you have seen stock in store click the edit button at the bottom and update the information</h5>
-        <h5> If you want to add items to the list drop me an email</h5>
-        <div>
+        <h1>CheK it Out </h1>
+        <div className="row paddingabove">
+              <div className="col-0 col-lg-12">
+        <h5>Easliy locate essential items in M33</h5>
+        <h5>Click the edit button to update the information</h5>
+        <h5>To add items to the list drop me an email</h5>
+        </div>
+        </div>
           <div className="Container">
             <DropDown
               itemList={this.state.itemList}
@@ -134,10 +137,12 @@ class App extends React.Component {
             />
             <br />
             <br />
-
-            <div className="row">
-              <div className="col-12 col-lg-12">
-
+        </div>
+        <div className="Details">
+            <div className="row paddingabove">
+              <div className="col-12 col-lg-3"/>
+              <div className="col-12 col-lg-6 paddingabove border border-dark border-thick">
+              <br/>
                 <ol className="list-group ">
                   {this.state.storeList.map(store => {
                     return <DisplayStatus
@@ -155,6 +160,7 @@ class App extends React.Component {
                   })}
                 </ol>
               </div>
+              <div className="col-12 col-lg-3"></div>
             </div>
             <br />
             <div className="row ">
@@ -172,7 +178,7 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        
       </div>
 
     );

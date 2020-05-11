@@ -33,25 +33,16 @@ class DisplayStatus extends React.Component {
 
         return true;
     }
-
-
-    // closeModal() {
-    //     this.props.resetVariablesFunc();
-    // }
-
     render() {
         return (  
     
                 <div className="row">
-                    <div className="col-0 col-lg-2">
-                        
+                    <div className="col-12 col-lg-3">
+                        <h5> {this.props.store}  </h5>
                     </div>
                     
-                    <div className="col-12 col-lg-2">
-                        <h5 align="left"> {this.props.store}  </h5>
-                    </div>
-                    
-                    <div className="col-4 col-lg-1">
+                    <div className="col-4 col-lg-2">
+                        {/* Conditionally enable or disable the button depending on status */}
                         {this.disableButton("None") 
                             ?
                             <button className="btn1 btn-outline-danger btn-block" disabled={true}
@@ -63,7 +54,7 @@ class DisplayStatus extends React.Component {
                             </button>
                         }
                     </div>
-                     <div className="col-4 col-lg-1">
+                     <div className="col-4 col-lg-2">
                         {this.disableButton("Some") 
                             ?
                             <button className="btn2 btn-outline-warning btn-block" disabled={true}
@@ -76,7 +67,7 @@ class DisplayStatus extends React.Component {
                             </button>
                         }
                     </div>
-                    <div className="col-4 col-lg-1">
+                    <div className="col-4 col-lg-2">
                         {this.disableButton("Lots") 
                             ?
                             <button className="btn3 btn-outline-success btn-block" disabled={true}
@@ -88,10 +79,8 @@ class DisplayStatus extends React.Component {
                             </button>
                         }
                     </div>
-                    <div className="col-12 col-lg-2">
-                        <h5 align="lefy"> Upd {this.props.date}</h5>
-                   </div>
-                   <div className="col-0 col-lg-1">
+                    <div className="col-12 col-lg-3">
+                        <p align="left"> Upd {this.props.date}</p>
                    </div>
            </div> 
         );
